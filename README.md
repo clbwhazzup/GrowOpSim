@@ -1,6 +1,6 @@
 # GrowOpSim
-Game Version 0.0.5
-README Version 0.0.5
+#### Game Version 0.0.5
+#### README Version 0.0.5
 ### Game Description
 This is meant to be a fun game simulating growing and selling weed on the black market. Players will be able to experience the entire growing, harvesting, and selling processes while making money to upgrade your grow operation. Maybe there will be a story to follow
 ###### Written in Unreal Blueprints

@@ -13,16 +13,26 @@ Currently, the game is still pre-prototype. With this being a solo project, I ha
 #### Next: 0.1
 * Nutrients clear on harvest, should only occur when flushing
 * Acidity management is non-existent and probably will be for a while
-* Can only hold one item and are placed physically on table only
+* Inventory system
+  * Can only hold one item and are placed physically on table only
+  * 
+* Mixed nutrients don't exist yet
+* Most of harvesting process doesn't exist
 
 ### Version requirements
 #### Version 0.1 (next)
 ##### Full gameplay cycle programmed with at least prototype models
 * **Quality of final flower will depend on how well the player does during growing and post harvest**
 * Place dirt
+  * Place dirt with nutrients pre-added
 * Plant seed
+  * Seeds of different strains have
+    * Specific nutrient requirements
+    * Pruning requirements
 * Nutrient Decay
+  * Dependent on age
 * Add nutrients
+  * Add mixed nutrients
 * Remove nutrients (flushing)
 * Acidity management
 * Harvesting

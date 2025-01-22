@@ -1,46 +1,47 @@
 # GrowOpSim
-#### Game Version 0.0.6
-#### README Version 0.0.6
+#### Game Version 0.0.7
+#### README Version 0.0.7
 ### Game Description
 This is meant to be a fun game simulating growing and selling weed on the black market. Players will be able to experience the entire growing, harvesting, and selling processes while making money to upgrade their grow operation. Maybe there will be a story to follow
 ###### Written in Unreal Blueprints
+###### Important distinction: Growth level is a float on a scale from 0-2000 and is accumalted per second based on nutrients. Growth stage is an integer on a scale from 0-4, which is based on growth level, and is used to determine nutrient decay multiplier and size of plant. Confusing but will probably stay
 
 ## State of the game
-Pre-prototype. Main gameplay functions not complete
+#### Pre-prototype. Main gameplay functions not complete
 
-###### Important distinction: Growth level is a float on a scale from 0-2000 and is accumalted per second based on nutrients. Growth stage is an integer on a scale from 0-4, which is based on growth level, and is used to determine nutrient decay multiplier and size of plant. Confusing but will probably stay
-### Patch Notes (0.0.6)
-* Declared new version 0.0.6 because enough changes occured
-* 0.1 version requirements changed
-  * Requirements for selling possibly too complex, added points before to state following requirements are optional
-* Inventory menu inside computer added (easiest way to connect to store)
-  * Can take stuff out but only placed in by store
-* Fixed store/inventory issue by initializing inventory list at start of game
-  * List now always has all items whether or not player has bought them, but at 0 quantity
-* Nutrient widget updated to have growth level and time
-* Balancing
-  * NuteDecayConst doubled to 0.04
-  * Death quality reduction requirement increased to 2000 growth level or growth time, from 1500
+### Patch Notes (0.0.7)
+* Declared new version 0.0.7 because enough changes occured
+* Updated version 0.1 requirements based on patch notes
+  * Except
+    * Moved requirements mixed nutrients and acidity management to version 0.2
+    * Some clarifications
+* Added Harvesting process
+  * Added stations to place plant in
+  * Added pruners to trim plant while in trimming station
+* Computer now has list for the fully processed plants
+* A fully harvested plant can now be put into the computer
+  * Plant now has function to calculate quality and weight
+    * Calculates weight based on formula W = (2.070114 * 1.001504 ^ L) - (0.008(T-L)), where W is the weight, L is the growth level, and T is the growth time
+    * Calulates quality depending on how far off dry and cure were
+      * Quality consideration for difference of growth time and growth level occurs when harvested, function in pot bp
 
 ### Difference between current and next version
-#### Current: 0.0.6
+#### Current: 0.0.7
 #### Next: 0.1
 * Only one key interaction
+  * Can't move pots
 * Nutrients clear on harvest, should only occur when flushing
-* Acidity management is non-existent and probably will be for a while
 * Inventory system
   * Can only hold one item
   * Items are placed physically on table only
   * Inventory menu can only have items placed in it from store
-* Mixed nutrients don't exist yet
-* Most of harvesting process doesn't exist
 * Selling doesn't exist
-* Pruning not fully implemented
 
 ### Version requirements
 #### Version 0.1 (next)
 ##### Full gameplay cycle programmed with at least prototype models
 ##### Technically playable but not obvious what to do or how to do it
+##### All previous versions are considered unplayable
 * Player interaction
   * Two key line trace contextual interaction
   * Primary key for main interactions
@@ -61,7 +62,6 @@ Pre-prototype. Main gameplay functions not complete
   * Add nutrients
     * Add mixed nutrients
   * Remove nutrients (flushing)
-  * Acidity management
 * Plant
   * Receives many parameters from pot to determine
     * How fast to grow
@@ -70,8 +70,8 @@ Pre-prototype. Main gameplay functions not complete
   * Can be pruned while holding specific held actor
 * Harvesting
   * Cut down
-    * Requires specific held actor
-    * Quality is first set here depending on
+    * ~~Requires specific held actor~~ Maybe not
+    * Quality is first set here (function in pot bp) depending on
       * Growth time and growth level difference
       * If it was pruned, if required
   * Trimming
@@ -83,13 +83,7 @@ Pre-prototype. Main gameplay functions not complete
   * Curing
     * Requires placing in actor
     * Timing affects quality
-* Mixed nutrients
-  * Item type actor
-  * Player can add single nutrients
-  * Can be picked up
-  * Can be used on pot to add multiple nutrients
-    * Should be a way to add unequal parts of each
-      * maybe just percentage
+
 * Selling
   * **Might be too hard to implement all consideration for pricing**
     * **Will probably only consider quality and amount which will be input for math function**
@@ -108,6 +102,11 @@ Pre-prototype. Main gameplay functions not complete
     * Store to buy stuff to grow with
     * Inventory to store stuff bought from store and fully cured plants
     * Menu Creator to set up the menu of available items
+  * Can place plant inside computer for storage and selling
+    * Plant has function to calculate quality and weight
+      * Calculates weight based on formula W = (2.070114 * 1.001504 ^ L) - (0.008(T-L)), where W is the weight, L is the Growth Level, and T is the growth time
+      * Calulates quality depending on how far off dry and cure were
+        * Quality consideration for difference of growth time and growth level occurs in pot bp when harvested
 * Inventory system
   * Scrollable hotbar based with inventory/storage ~~actor placed in world~~ menu inside computer
 * Store
@@ -117,6 +116,14 @@ Pre-prototype. Main gameplay functions not complete
 #### Version 0.2
 ##### Fully playable game, without tutorials or direction, doesn't require proper materials or models
 * Proper level to play entire game, whether or not it has proper materials or models
+* Acidity management
+* Mixed nutrients
+  * Item type actor
+  * Player can add single nutrients
+  * Can be picked up
+  * Can be used on pot to add multiple nutrients
+    * Should be a way to add unequal parts of each
+      * maybe just percentage
 
 #### Version 0.3 (undecided)
 ##### Fully playable game, without tutorials or direction
@@ -139,3 +146,4 @@ Pre-prototype. Main gameplay functions not complete
 ##### First release version
 * Definitely tutorials
 * Probably reputaion system
+* Probably reorganize code

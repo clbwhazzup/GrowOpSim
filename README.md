@@ -1,6 +1,6 @@
 # GrowOpSim
-#### Game Version 0.0.9
-#### README Version 0.0.9
+#### Game Version 0.0.9.9
+#### README Version 0.0.9.9
 ### Game Description
 This is meant to be a fun game simulating growing and selling weed on the black market. Players will be able to experience the entire growing, harvesting, and selling processes while making money to upgrade their grow operation. Maybe there will be a story to follow
 ###### Written in Unreal Blueprints
@@ -9,36 +9,13 @@ This is meant to be a fun game simulating growing and selling weed on the black 
 ## State of the game
 #### Pre-prototype. Main gameplay functions not complete
 
-### Patch Notes (0.0.9)
-* Declared new version 0.0.9 because enough changes occured
-* Updated version 0.1 requirements based on patch notes
-* **Added saving, actually playable but no instructions**
-  * Needed pause menu and main menu for saving and loading
-  * Ended up that save just loads when level opens, and can only new save from pause, and not main menu
-  * Player has save and load functions
-* Only computer, functionless tables, and trimming station preplaced in world
-* New pot and seed, 3 of each, all buyable and usable
-  * Starter Pot
-  * Better Pot
-  * Even Better Pot
-  * Bag Seeds
-  * Northern Lights Seeds
-  * Super Silver Haze Seeds
-* Each Seed now has a nute decay multiplier and grace periods
-  * Seed multiplier added on top of age dependent nute decay multiplier
-  * Grace period now subtracted from growth timer once
-* Water usage now is 1/2 of nute decay constant times both nute decay multipliers
-* Can now buy and place curing and drying stations
-  * Both jars that can be placed on flat surface
-* Now interact on pot to prune plant
-* Can now buy table storage and place on flat surface
-* Proper output for havestable plant, and dry and cure done
-* Easier to click weed list items to sell them
-* Some more materials, textures, and models
-* New technical method for determining physical plant size, will probably inmprove again
+### Patch Notes (0.0.9.9)
+* Not really sure what changed other than
+  * Added a level
+  * Fixed bugs
 
 ### Difference between current and next version
-#### Current: 0.0.9
+#### Current: 0.0.9.9
 #### Next: 0.1
 * Nutrients clear on harvest, should only occur when flushing
 * Inventory system

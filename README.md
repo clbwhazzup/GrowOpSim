@@ -10,6 +10,23 @@ This is meant to be a fun game simulating growing and selling weed on the black 
 ## State of the game
 #### Prototype. Most main gameplay functions complete
 
+
+#### Major Overhaul necessary
+* Interaction
+  * First, everything after each cast in player needs to be moved to the object that it's acting on
+  * Then, interaction blueprint interface
+    * Calls that code that was moved to the objects
+    * Only one call to this in player, it will have to detect if the object has the interface
+* Balancing
+  * There should probably be a day night cycle
+    * obviously plants can't take more than 14 in game days to grow
+    * Can skip time, and plants will grow at the appropriate rate
+    * Separate light cycles for veg and bloom
+  * Plants are kind of too sensitive
+    * Maybe they should be just as sensitive, but the nutrient levels move less
+    * Maybe divide nute amounts by 10
+
+
 ### Patch Notes (0.1)
 ##### So much 
 * Weed Storage actor
@@ -185,6 +202,13 @@ This is meant to be a fun game simulating growing and selling weed on the black 
 ###### This and further requirements are incomplete
 * Proper level to play entire game, whether or not it has proper materials or models
 * Acidity management
+* Plant
+  * Can be male or female
+    * Male
+      * Grows no flower
+      * Produces pollen
+        * Sprays after certain time
+        * Affects nearby plants
 * Mixed nutrients
   * Item type actor
   * Player can add single nutrients
@@ -207,6 +231,22 @@ This is meant to be a fun game simulating growing and selling weed on the black 
 * Market price should go down for larger quantities
 * Pause and main menu
   * Settings, saving, loading, new game, exit game
+* Wireless monitoring
+  * Buyable upgrade
+  * Enables widget
+  * Checks plant stats anywhere
+* Breeding
+  * Plants can be bred
+  * Plants can be male or female
+  * Plants can be bred heterosexually only
+  * Breeding 2 different strains can create
+    * Predetermined strains, up to a certain point
+      * Starting from the current 3 seeds, Bag Seed, Northern Lights, Super Silver Haze, a tree will be created of descending strains
+    * Unnamed strains, if a predetermined one doesn't exist
+      * Strain can be named
+      * Will have "unique" stats
+        * May be identical to another strain by chance
+  * Bag Seed will always create an unnamed strain
 
 #### Version 0.3 (undecided)
 ##### Fully playable game, without tutorials or direction
